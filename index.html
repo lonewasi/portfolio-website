@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wasi Ul Musharaf Lone — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Header -->
@@ -12,64 +13,43 @@
     <h1>Wasi Ul Musharaf Lone</h1>
     <p>Aspiring Web Developer | BCA Student</p>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <a href="#home" class="nav-link">Home</a>
+  <a href="#about" class="nav-link">About</a>
+  <a href="#skills" class="nav-link">Skills</a>
+  <a href="#projects" class="nav-link">Projects</a>
+  <a href="#achievements" class="nav-link">Achievements</a>
+  <a href="javascript:void(0)" id="open-contact">Contact</a>
+</nav>
+
   </header>
 
-  <!-- Home Section -->
+  <!-- Home -->
   <section id="home" class="center">
-    <img src="profilee.png.jpg" alt="Wasi Ul Musharaf Lone" class="profile-photo">
-    <h2>Hi, I'm Wasi 👋</h2>
+    <img src="profilee.png.jpg" alt="Wasi Ul Musharaf Lone" class="profile-photo" />
+    <h2>Hi, I'm <span class="highlight">Wasi 👋</span></h2>
     <p>Web Developer in Training | Passionate about creating responsive and interactive websites.</p>
+    <button id="open-contact-btn" class="btn-primary">📩 Contact Me</button>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
     <p>I'm Wasi Ul Musharaf Lone, a BCA student at Iqbal Institute of Technology and Management. I’m passionate about web development and aspire to become a full-stack developer in the future.</p>
     <p><strong>Interests:</strong> Coding, Designing, UI/UX, and Learning new technologies.</p>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Skills -->
   <section id="skills">
     <h2>My Skills</h2>
-
-    <div class="skill">
-      <p>HTML</p>
-      <div class="bar"><div class="progress" style="width: 90%;"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>CSS</p>
-      <div class="bar"><div class="progress" style="width: 80%;"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>JavaScript</p>
-      <div class="bar"><div class="progress" style="width: 70%;"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>Node.js</p>
-      <div class="bar"><div class="progress" style="width: 60%;"></div></div>
-    </div>
-    <div class="skill">
-      <p>express</p>
-      <div class="bar"><div class="progress" style="width: 60%;"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>MySQL</p>
-      <div class="bar"><div class="progress" style="width: 60%;"></div></div>
-    </div>
+    <div class="skill"><p>HTML</p><div class="bar"><div class="progress" style="width:90%;"></div></div></div>
+    <div class="skill"><p>CSS</p><div class="bar"><div class="progress" style="width:80%;"></div></div></div>
+    <div class="skill"><p>JavaScript</p><div class="bar"><div class="progress" style="width:70%;"></div></div></div>
+    <div class="skill"><p>Node.js</p><div class="bar"><div class="progress" style="width:60%;"></div></div></div>
+    <div class="skill"><p>Express</p><div class="bar"><div class="progress" style="width:60%;"></div></div></div>
+    <div class="skill"><p>MySQL</p><div class="bar"><div class="progress" style="width:60%;"></div></div></div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
 
@@ -90,7 +70,6 @@
       <ul>
         <li>Client, hotel, and transport record management</li>
         <li>Balance and bill tracking system</li>
-        <li>Data stored securely in MySQL</li>
         <li><strong>Tech Used:</strong> Node.js, Express, MySQL</li>
       </ul>
     </div>
@@ -111,7 +90,7 @@
     </div>
   </section>
 
-  <!-- Achievements Section -->
+  <!-- Achievements -->
   <section id="achievements">
     <h2>Achievements & Certifications</h2>
     <ul>
@@ -121,27 +100,41 @@
     </ul>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p><img src="envelope-solid-full.svg" alt="" class="icon"><strong>Email:</strong> <a href="mailto:royalvogs@gmail.com">royalvogs@gmail.com</a></p>
-    <p><img src="linkedin-brands-solid-full.svg" alt="" class="icon"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/wasi-lone-9b287b282" target="_blank">linkedin.com/in/wasi-lone-9b287b282</a></p>
-    <p><img src="github-brands-solid-full.svg" alt="" class="icon"><strong>GitHub:</strong> <a href="https://github.com/lonewasi" target="_blank">github.com/lonewasi</a></p>
-  </section>
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="modal">
+    <div class="modal-content glass">
+      <span class="close">&times;</span>
+      <h2 class="con">Contact Me</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-primary">Send</button>
+        <p id="status-message"></p>
+      </form>
+
+      <div class="contact-icons">
+        <a href="mailto:royalvogs@gmail.com"><img src="envelope-solid-full.svg" alt="Email" class="icon" /></a>
+        <a href="https://github.com/lonewasi" target="_blank"><img src="github-brands-solid-full.svg" alt="GitHub" class="icon" /></a>
+        <a href="https://www.linkedin.com/in/wasi-lone-9b287b282" target="_blank"><img src="linkedin-brands-solid-full.svg" alt="LinkedIn" class="icon" /></a>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Wasi Ul Musharaf Lone | All Rights Reserved</p>
-    <p>
-      🌐 Connect with me:
-      <a href="mailto:royalvogs@gmail.com" target="_blank">Email</a> |
-      <a href="https://github.com/lonewasi" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/wasi-lone-9b287b282" target="_blank">LinkedIn</a>
-    </p>
+    <div class="footer-icons">
+      <a href="mailto:royalvogs@gmail.com"><img src="envelope-solid-full.svg" class="icon" /></a>
+      <a href="https://github.com/lonewasi" target="_blank"><img src="github-brands-solid-full.svg" class="icon" /></a>
+      <a href="https://www.linkedin.com/in/wasi-lone-9b287b282" target="_blank"><img src="linkedin-brands-solid-full.svg" class="icon" /></a>
+    </div>
   </footer>
-
+<button id="back-to-top">⬆ up</button>
   <button id="theme-toggle">🌙 Dark Mode</button>
-   <button id="back-to-top">⬆️</button>
-  <script src="script.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
