@@ -1,17 +1,20 @@
+/* 🌍 GLOBAL STYLES */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  margin: 0;
   background: #f9f9fc;
   color: #222;
-  scroll-behavior: smooth;
+  line-height: 1.6;
   transition: background 0.3s, color 0.3s;
+  scroll-behavior: smooth;
 }
 
-/* Header */
+/* 🌈 HEADER */
 header {
   text-align: center;
   background: linear-gradient(135deg, #0077ff, #00c6ff);
@@ -20,42 +23,51 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
 nav a {
   color: white;
-  margin: 0 12px;
   text-decoration: none;
+  margin: 0 12px;
   font-weight: 500;
   transition: color 0.3s;
 }
+
 nav a:hover {
   color: #ffe600;
 }
 
-/* Sections */
+/* 🌸 SECTIONS */
 section {
   padding: 60px 20px;
   max-width: 900px;
   margin: auto;
-  animation: fadeIn 1s ease-in;
+  text-align: left;
+  animation: fadeIn 0.8s ease-in;
 }
 
 .center {
   text-align: center;
 }
 
-.profile-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  border: 4px solid #0077ff;
-  box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
-}
-
 .highlight {
   color: #0077ff;
 }
 
+/* 🖼️ PROFILE PHOTO */
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #0077ff;
+  margin-bottom: 15px;
+  box-shadow: 0 0 15px rgba(0, 119, 255, 0.4);
+}
+
+/* 💠 BUTTONS */
 .btn-primary {
   background: #0077ff;
   color: white;
@@ -66,27 +78,30 @@ section {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .btn-primary:hover {
-  background: #005fcb;
+  background: #005fcc;
 }
 
-/* Skills */
+/* 📊 SKILLS */
 .skill {
   margin: 15px 0;
 }
+
 .bar {
   height: 10px;
   background: #e0e0e0;
   border-radius: 6px;
   overflow: hidden;
 }
+
 .progress {
   height: 10px;
   background: linear-gradient(90deg, #0077ff, #00c6ff);
   border-radius: 6px;
 }
 
-/* Project Cards */
+/* 🧱 PROJECT CARDS */
 .project-card {
   background: white;
   padding: 20px;
@@ -95,34 +110,19 @@ section {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #0077ff;
-  color: white;
-}
-.footer-icons .icon {
-  width: 45px;
-  height: 45px;
-  margin: 0 10px;
-  background: white;
-  border-radius: 50%;
-  padding: 10px;
-  transition: transform 0.3s, opacity 0.3s;
-  opacity: 0.9;
-}
-.footer-icons .icon:hover {
-  transform: scale(1.15);
-  opacity: 1;
+/* 🏆 ACHIEVEMENTS */
+#achievements ul {
+  list-style-type: disc;
+  margin-left: 20px;
 }
 
-/* Modal */
+/* 📬 MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -131,17 +131,19 @@ footer {
   backdrop-filter: blur(5px);
   z-index: 100;
 }
+
 .modal-content.glass {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
   padding: 30px;
   border-radius: 15px;
-  margin: 10% auto;
   width: 90%;
   max-width: 400px;
+  margin: 10% auto;
   position: relative;
   animation: fadeUp 0.4s ease;
 }
+
 .close {
   position: absolute;
   right: 15px;
@@ -151,11 +153,12 @@ footer {
   color: #333;
 }
 
-/* Contact Icons */
+/* 📫 CONTACT ICONS */
 .contact-icons {
   text-align: center;
   margin-top: 25px;
 }
+
 .contact-icons img {
   width: 55px;
   height: 55px;
@@ -166,59 +169,132 @@ footer {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .contact-icons img:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* Dark Mode */
+/* 🌙 DARK MODE */
 body.dark-mode {
   background: #0e0e10;
   color: #e5e5e5;
 }
+
 body.dark-mode header,
 body.dark-mode footer {
-  background: #222;
+  background: #1f1f1f;
 }
+
 body.dark-mode .project-card {
   background: #1b1b1b;
 }
+
 body.dark-mode .modal-content.glass {
-  background: rgba(30, 30, 30, 0.9);
-  color: #fff;
+  background: rgba(30, 30, 30, 0.95);
 }
 
-/* Floating Buttons */
-#theme-toggle,
-#back-to-top {
-  position: fixed;
-  right: 20px;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 50px;
-  background: #0656a0;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-}
+/* 🎯 Floating Buttons */
+#back-to-top,
 #theme-toggle {
-  bottom: 90px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: fixed;
+  z-index: 1000;
 }
+
+/* ⬆️ Back to Top Button */
 #back-to-top {
+  bottom: 200px;     /* position above theme button */
+  right: 25px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#back-to-top:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(0, 119, 255, 0.5);
+}
+
+/* 🖼️ Back to Top Image */
+#back-to-top img {
+  width: 110px;   /* 👈 bigger image size */
+  height: 110px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#back-to-top img:hover {
+  transform: scale(1.1);
+}
+
+/* 🌗 Theme Toggle */
+#theme-toggle {
   bottom: 30px;
-  display: none;
+  right: 25px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(255, 200, 0, 0.5);
+}
+
+#theme-toggle img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#theme-toggle img:hover {
+  transform: scale(1.1);
+}
+
+/* 🦶 FOOTER */
+footer {
+  text-align: center;
+  background: #0077ff;
+  color: white;
+  padding: 25px;
+}
+
+.footer-icons .icon {
+  width: 45px;
+  height: 45px;
+  margin: 0 10px;
+  background: white;
+  border-radius: 80%;
   padding: 10px;
-
-  background-color: #0656a0;
-  font-size: 20px;
-  font-weight: 300;
-}
-#back-to-top.show {
-  display: block;
+  opacity: 0.9;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
-/* Animations */
+.footer-icons .icon:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+/* ✨ ANIMATIONS */
 @keyframes fadeUp {
   from {
     transform: translateY(40px);
@@ -229,19 +305,46 @@ body.dark-mode .modal-content.glass {
     opacity: 1;
   }
 }
+
 @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* 🌍 GLOBAL SMOOTHNESS */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* prevents content jump on section click */
+}
+
+/* Add gentle fade-in for all sections */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Delay each section slightly for smooth entry */
+section:nth-of-type(1) { animation-delay: 0.1s; }
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.3s; }
+section:nth-of-type(4) { animation-delay: 0.4s; }
+section:nth-of-type(5) { animation-delay: 0.5s; }
+
+/* 🌈 Smooth hover transitions across site */
+a, button, img, .project-card, .icon {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✨ Fade animation for content */
+@keyframes fadeInUp {
   from {
     opacity: 0;
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-.con {
-  text-align: center;
-  font-weight: 800;
 }

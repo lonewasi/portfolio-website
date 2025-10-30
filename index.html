@@ -13,14 +13,13 @@
     <h1>Wasi Ul Musharaf Lone</h1>
     <p>Aspiring Web Developer | BCA Student</p>
     <nav>
-  <a href="#home" class="nav-link">Home</a>
-  <a href="#about" class="nav-link">About</a>
-  <a href="#skills" class="nav-link">Skills</a>
-  <a href="#projects" class="nav-link">Projects</a>
-  <a href="#achievements" class="nav-link">Achievements</a>
-  <a href="javascript:void(0)" id="open-contact">Contact</a>
-</nav>
-
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="javascript:void(0)" id="open-contact">Contact</a>
+    </nav>
   </header>
 
   <!-- Home -->
@@ -52,7 +51,6 @@
   <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
-
     <div class="project-card">
       <h3>🏨 Hotel Management Software</h3>
       <p>A full-featured hotel booking and billing system designed for hotel owners and staff.</p>
@@ -104,7 +102,7 @@
   <div id="contact-modal" class="modal">
     <div class="modal-content glass">
       <span class="close">&times;</span>
-      <h2 class="con">Contact Me</h2>
+      <h2>Contact Me</h2>
       <form id="contact-form">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
@@ -130,11 +128,17 @@
       <a href="https://www.linkedin.com/in/wasi-lone-9b287b282" target="_blank"><img src="linkedin-brands-solid-full.svg" class="icon" /></a>
     </div>
   </footer>
-<button id="back-to-top">⬆ up</button>
-  <button id="theme-toggle">🌙 Dark Mode</button>
-  
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="script.js"></script>
 
+  <!-- Floating Buttons -->
+  <button id="back-to-top">
+    <img src="back-to.jpg" alt="Back to Top" />
+  </button>
+
+  <button id="theme-toggle">
+    <img src="dark mode.jpg" alt="Toggle Theme" id="theme-icon" />
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
