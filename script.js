@@ -1,31 +1,31 @@
-// 🌙 Theme Toggle with Icons
-const themeToggle = document.getElementById("theme-toggle");
+
 const themeIcon = document.getElementById("theme-icon");
+const body = document.body;
 
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
-  localStorage.setItem("theme", theme);
-  themeIcon.src = theme === "dark" ? "light mode.jpg" : "dark mode.jpg";
-  themeIcon.alt = theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
-});
-
-// Apply saved theme on load
+// Apply saved theme
 window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-    themeIcon.src = "light mode.jpg";
+    body.classList.add("dark-mode");
+    themeIcon.src = "light-mod.png"; // ☀️
   } else {
-    themeIcon.src = "dark mode.jpg";
+    themeIcon.src = "dark-mode.png"; // 🌙
   }
 });
 
-// 🔝 Back to top
+// Toggle theme
+themeIcon.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+
+  themeIcon.src = isDark ? "light-mode.png" : "dark-mode.png";
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
+// 🔝 BACK TO TOP BUTTON
 const backToTop = document.getElementById("back-to-top");
 
 window.addEventListener("scroll", () => {
-  // Show button after scrolling 250px
   if (document.documentElement.scrollTop > 250) {
     backToTop.style.opacity = "1";
     backToTop.style.pointerEvents = "auto";
@@ -37,38 +37,42 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Smooth scroll to top
 backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// 📩 Contact Modal
+
+// 📩 CONTACT MODAL
 const modal = document.getElementById("contact-modal");
 const openContact = document.getElementById("open-contact");
 const openContactBtn = document.getElementById("open-contact-btn");
 const closeModal = document.querySelector(".close");
 
-if (openContact)
+if (openContact) {
   openContact.addEventListener("click", (e) => {
     e.preventDefault();
     modal.style.display = "block";
   });
+}
 
-if (openContactBtn)
+if (openContactBtn) {
   openContactBtn.addEventListener("click", () => {
     modal.style.display = "block";
   });
+}
 
-if (closeModal)
+if (closeModal) {
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
   });
+}
 
 window.addEventListener("click", (e) => {
   if (e.target === modal) modal.style.display = "none";
 });
 
-// 📨 EmailJS
+
+// 📨 EMAILJS FORM
 const contactForm = document.getElementById("contact-form");
 if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
@@ -94,7 +98,8 @@ if (contactForm) {
   });
 }
 
-// 🧭 Smooth Scroll for Navbar Links
+
+// 🧭 SMOOTH SCROLL FOR NAV LINKS
 document.querySelectorAll("nav a[href^='#']").forEach((link) => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -103,7 +108,8 @@ document.querySelectorAll("nav a[href^='#']").forEach((link) => {
   });
 });
 
-// ✨ Smooth Fade-In on Scroll
+
+// ✨ FADE-IN ANIMATION ON SCROLL
 const fadeSections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(

@@ -69,7 +69,7 @@ section {
 
 /* 💠 BUTTONS */
 .btn-primary {
-  background: #0077ff;
+  background: #314052;
   color: white;
   border: none;
   padding: 12px 22px;
@@ -97,7 +97,7 @@ section {
 
 .progress {
   height: 10px;
-  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  background: linear-gradient(90deg, #456181, #00c6ff);
   border-radius: 6px;
 }
 
@@ -172,7 +172,7 @@ section {
 
 .contact-icons img:hover {
   transform: scale(1.15);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(112, 53, 53, 0.25);
 }
 
 /* 🌙 DARK MODE */
@@ -208,9 +208,9 @@ body.dark-mode .modal-content.glass {
 /* ⬆️ Back to Top Button */
 #back-to-top {
   bottom: 200px;     /* position above theme button */
-  right: 25px;
-  width: 150px;
-  height: 150px;
+  right: 60px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: white;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
@@ -222,7 +222,7 @@ body.dark-mode .modal-content.glass {
 
 #back-to-top:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 40px rgba(0, 119, 255, 0.5);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
 
 /* 🖼️ Back to Top Image */
@@ -230,7 +230,7 @@ body.dark-mode .modal-content.glass {
   width: 110px;   /* 👈 bigger image size */
   height: 110px;
   object-fit: contain;
-  border-radius: 50%;
+  border-radius: 70%;
   transition: transform 0.3s ease;
 }
 
@@ -238,15 +238,30 @@ body.dark-mode .modal-content.glass {
   transform: scale(1.1);
 }
 
+.theme-icon {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 155px;
+  height: 155px;
+  cursor: pointer;
+  border-radius: 90%;
+
+  padding: 8px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
 /* 🌗 Theme Toggle */
 #theme-toggle {
-  bottom: 30px;
+  bottom: 0px;
   right: 25px;
   width: 130px;
   height: 130px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  border-radius: 0%;
+  background: rgb(0, 0, 0);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -255,15 +270,15 @@ body.dark-mode .modal-content.glass {
 
 #theme-toggle:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 40px rgba(255, 200, 0, 0.5);
+  box-shadow: 0 0 40px rgba(151, 74, 74, 0.5);
 }
 
 #theme-toggle img {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
+  border-radius: 60%;
+  transition: transform 0.2s ease;
 }
 
 #theme-toggle img:hover {
@@ -273,7 +288,7 @@ body.dark-mode .modal-content.glass {
 /* 🦶 FOOTER */
 footer {
   text-align: center;
-  background: #0077ff;
+  background: #105cad;
   color: white;
   padding: 25px;
 }
@@ -347,4 +362,25 @@ a, button, img, .project-card, .icon {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* 🌗 Dark Mode Icon in Header */
+.theme-icon {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 155px;
+  height: 155px;
+  cursor: pointer;
+  border-radius: 10%;
+  background: none;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 0 10px rgba(119, 106, 106, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
 }
