@@ -4,7 +4,12 @@ const body = document.body;
 // 🌓 Apply saved theme instantly (no white flash)
 const savedTheme = localStorage.getItem("theme");
 
-// Set default instantly (before any transition)
+// Hide icon initially
+themeIcon.style.opacity = "0";
+themeIcon.style.transition = "opacity 0.3s ease";
+themeIcon.style.display = "none"; // prevent white box before load
+
+// Apply saved theme before icon appears
 if (savedTheme === "dark") {
   body.classList.add("dark-mode");
   themeIcon.src = "light-mode.png"; // ☀️
@@ -13,13 +18,11 @@ if (savedTheme === "dark") {
   themeIcon.src = "dark-mode.png"; // 🌙
 }
 
-// 🌗 Fade-in only after correct image is ready
-themeIcon.style.opacity = "0";
-
+// When image is ready, fade in
 themeIcon.addEventListener("load", () => {
+  themeIcon.style.display = "block"; // show after image loaded
   requestAnimationFrame(() => {
-    themeIcon.style.transition = "opacity 0.3s ease";
-    themeIcon.style.opacity = "1"; // fade in when image is ready
+    themeIcon.style.opacity = "1"; // smooth fade in
   });
 });
 
@@ -28,10 +31,23 @@ themeIcon.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
   const isDark = body.classList.contains("dark-mode");
 
+  // Instantly hide icon before switching src to avoid flash
+  themeIcon.style.opacity = "0";
+
   themeIcon.src = isDark ? "light-mode.png" : "dark-mode.png";
   localStorage.setItem("theme", isDark ? "dark" : "light");
-});
 
+  // Wait for new image to load, then fade it in
+  themeIcon.addEventListener(
+    "load",
+    () => {
+      requestAnimationFrame(() => {
+        themeIcon.style.opacity = "1";
+      });
+    },
+    { once: true }
+  );
+});
 
 
 // 🔝 BACK TO TOP BUTTON
