@@ -150,3 +150,11 @@ document.addEventListener("click", (e) => {
     sidebar.classList.remove("active");
   }
 });
+
+// 🧩 Show 'Upload Certificates' button only for admin
+const params = new URLSearchParams(window.location.search);
+const isAdmin = params.get("admin") === "true";
+
+if (isAdmin) {
+  document.getElementById("uploadLink").style.display = "inline-block";
+}
