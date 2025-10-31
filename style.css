@@ -523,8 +523,9 @@ a, button, img, .project-card, .icon {
 
 /* 🌈 SIDEBAR MENU */
 .menu-btn {
-  background: linear-gradient(135deg, #0077ff, #01d5ff);
-  color: white;
+  background: linear-gradient(135deg, #ffffff, #edf1f1);
+  color: #000000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   border: none;
   padding: 0.7rem 1.2rem;
   font-size: 1rem;
