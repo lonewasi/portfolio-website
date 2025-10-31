@@ -1,0 +1,206 @@
+/* 🌌 NOVELS PAGE DESIGN */
+body {
+  background: radial-gradient(circle at top, #001220, #000);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 🔹 Header */
+.siteheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: #28c3ee;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.siteheader h1 {
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  color: #000000;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+/* 📚 Novel Container */
+.novel-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2.2rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* 📘 Modern Glass Card Design */
+.novel-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+  padding: 1.8rem 1.2rem;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.novel-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(0, 255, 255, 0.12);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.4);
+}
+
+/* ✨ Sequential Animation Delay */
+.novel-card:nth-child(1) { animation-delay: 0.1s; }
+.novel-card:nth-child(2) { animation-delay: 0.3s; }
+.novel-card:nth-child(3) { animation-delay: 0.5s; }
+.novel-card:nth-child(4) { animation-delay: 0.7s; }
+.novel-card:nth-child(5) { animation-delay: 0.9s; }
+
+/* 🖼️ Book Image */
+.novel-card img {
+  width: 50%;
+  height: 340px; /* taller height for full visibility */
+  border-radius: 14px;
+  object-fit: cover; /* maintains proportion */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.novel-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ✍️ Book Text */
+.novel-card h3 {
+  margin-top: 1rem;
+  color: #00eaff;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.novel-card p {
+  font-size: 0.95rem;
+  color: #bbb;
+  margin: 0.6rem 0 1.2rem;
+  line-height: 1.6;
+}
+
+/* 🔗 Modern Button */
+.novel-card a {
+  display: inline-block;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #000000c7;
+  font-weight: 900;
+  background: linear-gradient(135deg, #00eaff, #ffefef);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.novel-card a:hover {
+  background: linear-gradient(135deg, #fffbfb, #ebf4ff);
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+/* ✨ Fade-in Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🏠 Footer */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+.back-home {
+  color: #00c6ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.back-home:hover {
+  color: #fff;
+}
+
+/* 📱 Responsive Design */
+
+/* ✅ Tablets and small laptops */
+@media (max-width: 1024px) {
+  .siteheader h1 {
+    font-size: 2rem;
+  }
+
+  .novel-container {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.6rem;
+  }
+
+  .novel-card img {
+    height: 280px;
+  }
+
+  .novel-card h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* ✅ Mobile screens */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .siteheader h1 {
+    font-size: 1.7rem;
+  }
+
+  .novel-container {
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
+  }
+
+  .novel-card {
+    padding: 1.2rem;
+  }
+
+  .novel-card img {
+    height: 240px;
+  }
+
+  .novel-card p {
+    font-size: 0.88rem;
+  }
+
+  .novel-card a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
