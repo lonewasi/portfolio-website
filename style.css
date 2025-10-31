@@ -484,3 +484,22 @@ a, button, img, .project-card, .icon {
   font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 600;
 }
+/* 📱 Final Fix for Dark Mode Icon Overlap */
+@media (max-width: 768px) {
+  .theme-icon {
+    top: 10px !important;
+    right: 10px !important;
+    width: 45px !important;
+    height: 45px !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-icon {
+    top: 8px !important;
+    right: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
