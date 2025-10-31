@@ -106,25 +106,40 @@
   </section>
 
   <!-- Contact Modal -->
-  <div id="contact-modal" class="modal">
-    <div class="modal-content glass">
-      <span class="close">&times;</span>
-      <h2>Contact Me</h2>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-primary">Send</button>
-        <p id="status-message"></p>
-      </form>
+<!-- Contact Modal -->
+<div id="contact-modal" class="modal">
+  <div class="modal-content glass">
+    <span class="close">&times;</span>
+    <h2>Contact Me</h2>
 
-      <div class="contact-icons">
-        <a href="mailto:royalvogs@gmail.com"><img src="envelope-solid-full.svg" alt="Email" class="icon" /></a>
-        <a href="https://github.com/lonewasi" target="_blank"><img src="github-brands-solid-full.svg" alt="GitHub" class="icon" /></a>
-        <a href="https://www.linkedin.com/in/wasi-lone-9b287b282" target="_blank"><img src="linkedin-brands-solid-full.svg" alt="LinkedIn" class="icon" /></a>
-      </div>
+    <!-- ✅ Working Contact Form -->
+    <form action="https://formsubmit.co/royalvogs@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <!-- Optional: disable captcha -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Optional: redirect to a thank you page -->
+      <input type="hidden" name="_next" value="https://lonewasi.github.io/portfolio-website/thankyou.html">
+
+      <!-- Optional: custom subject for your inbox -->
+      <input type="hidden" name="_subject" value="New Message from Portfolio Website">
+
+      <button type="submit" class="btn-primary">Send</button>
+      <p id="status-message"></p>
+    </form>
+
+    <!-- Social Icons -->
+    <div class="contact-icons">
+      <a href="mailto:royalvogs@gmail.com"><img src="envelope-solid-full.svg" alt="Email" class="icon" /></a>
+      <a href="https://github.com/lonewasi" target="_blank"><img src="github-brands-solid-full.svg" alt="GitHub" class="icon" /></a>
+      <a href="https://www.linkedin.com/in/wasi-lone-9b287b282" target="_blank"><img src="linkedin-brands-solid-full.svg" alt="LinkedIn" class="icon" /></a>
     </div>
   </div>
+</div>
+
 
   <!-- Footer -->
   <footer>
