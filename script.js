@@ -128,3 +128,25 @@ fadeSections.forEach((section) => {
   section.style.animationPlayState = "paused";
   observer.observe(section);
 });
+
+
+
+// ☰ Sidebar Functionality
+const menuBtn = document.getElementById("menu-btn");
+const sidebar = document.getElementById("sidebar");
+const closeSidebar = document.getElementById("close-sidebar");
+
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.add("active");
+});
+
+closeSidebar.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+});
+
+// Optional: close sidebar when clicking outside
+document.addEventListener("click", (e) => {
+  if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+    sidebar.classList.remove("active");
+  }
+});
