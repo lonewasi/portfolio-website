@@ -1,19 +1,29 @@
-
 const themeIcon = document.getElementById("theme-icon");
 const body = document.body;
 
-// Apply saved theme
-window.addEventListener("load", () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    body.classList.add("dark-mode");
-    themeIcon.src = "light-mode.png"; // ☀️
-  } else {
-    themeIcon.src = "dark-mode.png"; // 🌙
-  }
+// 🌓 Apply saved theme instantly (no white flash)
+const savedTheme = localStorage.getItem("theme");
+
+// Set default instantly (before any transition)
+if (savedTheme === "dark") {
+  body.classList.add("dark-mode");
+  themeIcon.src = "light-mode.png"; // ☀️
+} else {
+  body.classList.remove("dark-mode");
+  themeIcon.src = "dark-mode.png"; // 🌙
+}
+
+// 🌗 Fade-in only after correct image is ready
+themeIcon.style.opacity = "0";
+
+themeIcon.addEventListener("load", () => {
+  requestAnimationFrame(() => {
+    themeIcon.style.transition = "opacity 0.3s ease";
+    themeIcon.style.opacity = "1"; // fade in when image is ready
+  });
 });
 
-// Toggle theme
+// 🌙 Toggle theme on click
 themeIcon.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
   const isDark = body.classList.contains("dark-mode");
@@ -21,6 +31,8 @@ themeIcon.addEventListener("click", () => {
   themeIcon.src = isDark ? "light-mode.png" : "dark-mode.png";
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
+
+
 
 // 🔝 BACK TO TOP BUTTON
 const backToTop = document.getElementById("back-to-top");
@@ -70,33 +82,6 @@ if (closeModal) {
 window.addEventListener("click", (e) => {
   if (e.target === modal) modal.style.display = "none";
 });
-
-
-// 📨 EMAILJS FORM
-const contactForm = document.getElementById("contact-form");
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const status = document.getElementById("status-message");
-    status.textContent = "Sending...";
-    status.style.color = "#0077ff";
-
-    emailjs.init("jfDn•••••••••••••••••");
-
-    emailjs
-      .sendForm("service_cb77dzd", "template_9wz4jq9", this)
-      .then(() => {
-        status.textContent = "✅ Message sent successfully!";
-        status.style.color = "green";
-        this.reset();
-        setTimeout(() => (modal.style.display = "none"), 2000);
-      })
-      .catch(() => {
-        status.textContent = "❌ Failed to send message. Please try again.";
-        status.style.color = "red";
-      });
-  });
-}
 
 
 // 🧭 SMOOTH SCROLL FOR NAV LINKS
