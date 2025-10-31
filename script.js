@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     body.classList.add("dark-mode");
-    themeIcon.src = "light-mod.png"; // ☀️
+    themeIcon.src = "light-mode.png"; // ☀️
   } else {
     themeIcon.src = "dark-mode.png"; // 🌙
   }
