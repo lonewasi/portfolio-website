@@ -155,6 +155,30 @@ document.addEventListener("click", (e) => {
 const params = new URLSearchParams(window.location.search);
 const isAdmin = params.get("admin") === "true";
 
-if (isAdmin) {
-  document.getElementById("uploadLink").style.display = "inline-block";
+const uploadLink = document.getElementById("uploadLink");
+
+// Hide by default, show only for admin
+if (uploadLink) {
+  uploadLink.style.display = "none";
+  if (isAdmin) {
+    uploadLink.style.display = "inline-block";
+  }
+}
+
+// 📚 "More" Button Functionality (for novel or project sections)
+const moreBtn = document.getElementById("more-btn");
+const hiddenBooks = document.getElementById("hidden-books");
+
+if (moreBtn && hiddenBooks) {
+  moreBtn.addEventListener("click", () => {
+    // Toggle visibility
+    hiddenBooks.classList.toggle("show");
+
+    // Change button text dynamically
+    if (hiddenBooks.classList.contains("show")) {
+      moreBtn.textContent = "Show Less";
+    } else {
+      moreBtn.textContent = "Show More";
+    }
+  });
 }
