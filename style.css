@@ -497,7 +497,7 @@ a, button, img, .project-card, .icon {
   font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 600;
 }
-/* 📱 Final Fix for Dark Mode Icon Overlap */
+
 @media (max-width: 768px) {
   .theme-icon {
     top: 10px !important;
@@ -512,69 +512,13 @@ a, button, img, .project-card, .icon {
   .theme-icon {
     top: 8px !important;
     right: 8px !important;
-    width: 60px !important;
-    height: 60px !important;
+    width: 50px !important;
+    height: 50px !important;
   }
 }
 
 
 
-
-
-/* 🌈 SIDEBAR MENU */
-.menu-btn {
-  background: linear-gradient(135deg, #ffffff, #edf1f1);
-  color: #000000;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  border: none;
-  padding: 0.7rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 18px;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.menu-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(1, 4, 7, 0.3);
-  color: #0e0e10;
-  font-weight: 600;
-}
-
-/* Sidebar Base */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -280px;
-  width: 260px;
-  height: 100vh;
-  background: var(--sidebar-bg, #ffffff);
-  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.15);
-  overflow-y: auto;
-  transition: left 0.3s ease;
-  z-index: 9999;
-}
-
-.sidebar.active {
-  left: 0;
-}
-
-/* Header Section in Sidebar */
-.sidebar-header {
-  background: linear-gradient(135deg, #05a3ff, #3cbde0);
-  color: white;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.sidebar-header h3 {
-  font-size: 1.1rem;
-  margin: 0;
-}
 
 .close-btn {
   font-size: 1.5rem;
@@ -630,4 +574,114 @@ body.dark .sidebar {
   --sidebar-bg: #1e1e1e;
   --text: #f5f5f5;
   --text-strong: #00c6ff;
+}
+
+#suvidha {
+  text-align: center;
+  background: linear-gradient(135deg, #f0f9ff, #cbebff);
+  padding: 2.5rem 1rem;
+  margin-top: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#suvidha:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+#suvidha h2 {
+  color: #0077ff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+#suvidha p {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.6;
+}
+body.dark-mode #suvidha {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+}
+
+body.dark-mode #suvidha h2 {
+  color: #4da8ff;
+}
+body.dark-mode #suvidha p {
+  color: #cccccc; /* Softer light gray for readability */
+}
+
+body.dark-mode #suvidha p strong {
+  color: #ffffff; /* Keep the highlighted part pure white */
+  font-weight: 600;
+}
+
+body.dark-mode #suvidha p strong {
+  color: #ffffff;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* 🪶 EXTRA SMOOTH TRANSITIONS SITE-WIDE */
+* {
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Smooth sidebar opening and closing */
+.sidebar {
+  transition: left 0.4s ease, background-color 0.4s ease;
+}
+
+/* Soft appearance for modal */
+.modal {
+  animation: fadeIn 0.4s ease;
+}
+
+/* Fade-in for footer */
+footer {
+  animation: fadeIn 0.8s ease-in;
+}
+
+/* 🌙 Dark Mode Smooth Fade */
+body {
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode .project-card,
+body.dark-mode .modal-content.glass {
+  transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.4s ease;
+}
+
+/* 🪄 Hover Glow for Buttons */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* 🌟 Section Fade-in Enhancement */
+section {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
