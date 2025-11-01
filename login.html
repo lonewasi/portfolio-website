@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Wasi Ul Musharaf Lone</title>
+  <link rel="stylesheet" href="auth.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="auth-container">
+    <h2>Welcome Back 👋</h2>
+    <p>Login to continue to your account</p>
+
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit" class="btn-primary">Login</button>
+    </form>
+
+    <p class="switch-text">
+      Don’t have an account? <a href="signup.html">Sign Up</a>
+    </p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      // Dummy login check (later connect with backend)
+      if (email === "admin@zupra.com" && password === "1234") {
+        window.location.href = "index.html?admin=true";
+      } else {
+        alert("Invalid credentials, try again!");
+      }
+    });
+  </script>
+</body>
+</html>
